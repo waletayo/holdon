@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require("express");
+var router = express.Router();
+var LocationController = require("./Location.controller");
+router.get("/user/users", LocationController.GetAllLocation);
+router.post("/location/create", LocationController.createLocation);
+router.get("/location/one", LocationController.findOneLocation);
+router.patch("/location/one/edit", LocationController.updateLocation);
+router.delete("/location/one/remove", LocationController.deleteLocation);
+router.get("/location/calculate", LocationController.distanceCalulator);
+exports.default = router;
